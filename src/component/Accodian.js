@@ -12,6 +12,9 @@ export default function Accordion() {
 
     function handleSingleSelect(ss) {
         setSelect(ss === select ? null : ss);
+        // let a=[...multiple]
+        setmultiple([ss])
+
     }
     function handlemultiselection(ss) {
         
@@ -28,7 +31,7 @@ export default function Accordion() {
             console.log(check)
             arr.splice(check, 1)
 
-
+setSelect(null)
         }
 
         setmultiple(arr)
@@ -39,12 +42,12 @@ export default function Accordion() {
 
     return (
         <div className="wrapper w-full h-full flex justify-center items-center p-2 flex-col gap-3 overflow-x-hidden  ">
-            <button className="p-3 w-[250px]   bg-[#614101] text-white font-bold" onClick={() => setenableultiselecter(!enableultiselecter)}>{enableultiselecter !==true  ?"Enable Multi Selection":"Enable Single Selection"}</button>
+            <button className="p-3 w-[250px]   bg-[#614101] text-white font-bold rounded" onClick={() =>{setenableultiselecter(!enableultiselecter);setSelect(null);setmultiple([null])}}>{enableultiselecter !==true  ?"Enable Multi Selection":"Enable Single Selection"}</button>
             <div className="accordion w-full max-w-[700px] flex flex-col justify-center  gap-3  ">
                 {data && data.length ? (
                     data.map(a => (
-                        <div className="item  w-full h-fit bg-[#614101] text-white  flex flex-col  " key={a.id}>
-                            <div className="title flex justify-between  w-full h-full px-3 py-3 cursor-pointer" onClick={enableultiselecter ? () => handlemultiselection(a.id) : (e) => { handleSingleSelect(a.id); }}>
+                        <div className="item  w-full h-fit bg-[#614101] text-white  flex flex-col rounded  " key={a.id}>
+                            <div className="title flex justify-between  w-full h-full px-3 pt-3 pb-3 cursor-pointer" onClick={enableultiselecter ? () => handlemultiselection(a.id) : (e) => { handleSingleSelect(a.id); }}>
                                 <h3 className="font-bold">{a.question}</h3>
                                 <span>+</span>
                             </div>
