@@ -13,7 +13,7 @@ export default function Accordion() {
     function handleSingleSelect(ss) {
         setSelect(ss === select ? null : ss);
         // let a=[...multiple]
-        setmultiple([ss])
+        // setmultiple([ss])
 
     }
     function handlemultiselection(ss) {
