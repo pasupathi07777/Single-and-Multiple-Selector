@@ -38,7 +38,7 @@ export default function Accordion() {
     }
 
     return (
-        <div className="wrapper w-full h-full flex justify-center items-center p-2 flex-col gap-3 overflow-x-hidden ">
+        <div className="wrapper w-full h-full flex justify-center items-center p-2 flex-col gap-3 overflow-x-hidden  ">
             <button className="p-3 w-[250px]   bg-[#614101] text-white font-bold" onClick={() => setenableultiselecter(!enableultiselecter)}>{enableultiselecter !==true  ?"Enable Multi Selection":"Enable Single Selection"}</button>
             <div className="accordion w-full max-w-[700px] flex flex-col justify-center  gap-3  ">
                 {data && data.length ? (
